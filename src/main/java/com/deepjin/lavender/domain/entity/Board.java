@@ -22,7 +22,7 @@ public class Board {
     @Column(length = 20, nullable = false)
     private String title;
 
-    @Column(length = 200, nullable = false)
+    @Column(length = 5000, nullable = false)
     private String content;
 
     @CreatedDate
