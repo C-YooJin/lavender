@@ -8,6 +8,7 @@
 <body>
 <header th:insert="common/header.html"></header>
 <div class="container">
+    <!--/*@thymesVar id="post" type="com.deepjin.lavender.dto.BoardDto"*/-->
     <form th:action="@{'/post/edit/' + ${post.id}}" method="post">
         <input type="hidden" name="_method" value="put"/>
         <input type="hidden" name="id" th:value="${post.id}"/>
