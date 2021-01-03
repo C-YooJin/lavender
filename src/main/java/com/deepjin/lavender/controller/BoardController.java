@@ -4,10 +4,7 @@ import com.deepjin.lavender.dto.BoardDto;
 import com.deepjin.lavender.service.MyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -59,6 +56,12 @@ public class BoardController {
     public String update(BoardDto boardDto) {
         myService.savePost(boardDto);
 
+        return "redirect:/";
+    }
+
+    @DeleteMapping("/post/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        myService.deletePost(id);
         return "redirect:/";
     }
 
